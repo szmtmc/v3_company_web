@@ -1,5 +1,6 @@
 <template>
-  <div>
-    home aagain 怒iu呵护
-  </div>
+  <Ta title="dwadahduawu">
+    <template #footer> 222 </template>
+  </Ta>
 </template>
+<script lang="ts" setup></script>
