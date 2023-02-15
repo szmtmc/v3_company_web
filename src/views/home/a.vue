@@ -56,7 +56,7 @@
         <a-layout-content>
           <router-view />
         </a-layout-content>
-        <a-layout-footer>At管理平台</a-layout-footer>
+        <!-- <a-layout-footer>At管理平台</a-layout-footer> -->
       </a-layout>
     </a-layout>
   </a-layout>

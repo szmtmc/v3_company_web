@@ -1,7 +1,7 @@
 <template>
   <at-base>
     <at-base-header>
-      <at-filter-group />
+      <at-filter-group :filterDefs="filterDefs" :filter="filter" />
     </at-base-header>
     <at-base-content ref="el">
       <!-- <at-table :pagination="false" :columns="columns" :data="data" /> -->
@@ -696,4 +696,25 @@ const data = reactive([
     email: "william.smith@example.com",
   },
 ]);
+const filterDefs: any = reactive([
+  {
+    id: "taskStatus",
+    type: "select",
+    placeholder: "222",
+    width: 200,
+    options: [
+      {
+        label: "1",
+        value: 1,
+      },
+      {
+        label: "2",
+        value: 2,
+      },
+    ],
+  },
+]);
+const filter = reactive({
+  taskStatus: 1,
+});
 </script>

@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     ASelect: typeof import('@arco-design/web-vue')['Select']
     ASubMenu: typeof import('@arco-design/web-vue')['SubMenu']
     ATable: typeof import('@arco-design/web-vue')['Table']
+    ATag: typeof import('@arco-design/web-vue')['Tag']
     AtBase: typeof import('./src/components/AtBase/index.vue')['default']
     AtBaseContent: typeof import('./src/components/AtBaseContent/index.vue')['default']
     AtBaseHeader: typeof import('./src/components/AtBaseHeader/index.vue')['default']
