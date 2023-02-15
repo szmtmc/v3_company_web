@@ -1,6 +1,9 @@
 import { defineConfig } from "vite";
 import path from "path";
 import vue from "@vitejs/plugin-vue";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ArcoResolver } from "unplugin-vue-components/resolvers";
 
 export default defineConfig({
   resolve: {
@@ -16,5 +19,17 @@ export default defineConfig({
       dirs: path.resolve(__dirname, "src/directives"),
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    AutoImport({
+      resolvers: [ArcoResolver()],
+    }),
+    Components({
+      resolvers: [
+        ArcoResolver({
+          sideEffect: true,
+        }),
+      ],
+    }),
+  ],
 });

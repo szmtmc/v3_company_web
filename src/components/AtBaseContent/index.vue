@@ -6,7 +6,7 @@ export default {
 <style lang="scss" scoped>
 .at-base-content {
   flex: 1;
-  padding: 12px;
+  padding: 12px 0;
   overflow: auto;
   background-color: #eff2f5;
 }
@@ -15,7 +15,6 @@ export default {
   flex-direction: column;
   box-sizing: border-box;
   height: 100%;
-  overflow: hidden;
   background: #fff;
   border: 1px solid #e6e6ed;
   border-radius: 4px;
@@ -30,8 +29,14 @@ export default {
   }
   &-body {
     flex: 1;
-    overflow-y: hidden;
   }
+}
+:deep(.at-table-content-body .arco-table) {
+  display: flex;
+  flex-direction: column;
+}
+:deep(.at-table-content-body .arco-table-container) {
+  flex: 1;
 }
 </style>
 <template>

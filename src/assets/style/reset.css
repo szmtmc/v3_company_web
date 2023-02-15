@@ -22,4 +22,4 @@ hr{border:none;height:1px}
 a:link:hover{color:#4f4cd4!important;text-decoration:underline}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both}
-.clearfix{*zoom:1}
+.clearfix{zoom:1}
