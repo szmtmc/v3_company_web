@@ -36,6 +36,7 @@ declare module '@vue/runtime-core' {
     AtFilterGroup: typeof import('./src/components/AtFilterGroup/index.vue')['default']
     ATimePicker: typeof import('@arco-design/web-vue')['TimePicker']
     AtTable: typeof import('./src/components/AtTable/index.vue')['default']
+    AtToolbar: typeof import('./src/components/AtToolbar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

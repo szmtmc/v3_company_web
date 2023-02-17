@@ -60,7 +60,6 @@ const onCollapse = () => {
   collapsed.value = !collapsed.value;
 };
 const { path } = route;
-console.log(path);
 let defaultSelectedKeys = path.substring(1, path.length);
 let defaultOpenKeys = defaultSelectedKeys.split("/")[0];
 const routerList = [
@@ -69,7 +68,7 @@ const routerList = [
     key: "custom",
     children: [
       {
-        name: "布局组件",
+        name: "布局展示",
         key: "custom/layout",
       },
       {

@@ -3,6 +3,11 @@ export default {
   name: "at-base-content",
 };
 </script>
+
+<script lang="ts" setup>
+import { useSlots } from "vue";
+const slots = useSlots();
+</script>
 <style lang="scss" scoped>
 .at-base-content {
   flex: 1;
@@ -10,6 +15,7 @@ export default {
   overflow: auto;
   background-color: #eff2f5;
 }
+
 .at-table-content {
   display: flex;
   flex-direction: column;
@@ -18,6 +24,7 @@ export default {
   background: #fff;
   border: 1px solid #e6e6ed;
   border-radius: 4px;
+
   &-header {
     display: flex;
     align-items: center;
@@ -25,15 +32,19 @@ export default {
     box-sizing: border-box;
     min-height: 56px;
     padding: 0 16px;
+    border-bottom: 1px solid #e6e6ed;
   }
+
   &-body {
     flex: 1;
   }
 }
+
 :deep(.at-table-content-body .arco-table) {
   display: flex;
   flex-direction: column;
 }
+
 :deep(.at-table-content-body .arco-table-container) {
   flex: 1;
 }
@@ -41,12 +52,15 @@ export default {
 <template>
   <div class="at-base-content">
     <div class="at-table-content">
-      <div class="at-table-content-header">
-        <slot name="left"></slot>
+      <div class="at-table-content-header" v-if="slots?.left || slots?.right">
+        <div>
+        <slot name="left"></slot></div>
+        <div class="right">
+          <slot name="right"></slot>
+        </div>
       </div>
       <div class="at-table-content-body">
         <slot> </slot>
       </div>
     </div>
-  </div>
-</template>
+  </div></template>

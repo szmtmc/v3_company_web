@@ -15,8 +15,6 @@ export default defineConfig({
       views: path.resolve(__dirname, "src/views"),
       layouts: path.resolve(__dirname, "src/layouts"),
       utils: path.resolve(__dirname, "src/utils"),
-      apis: path.resolve(__dirname, "src/apis"),
-      dirs: path.resolve(__dirname, "src/directives"),
     },
   },
   plugins: [

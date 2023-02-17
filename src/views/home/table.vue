@@ -3,9 +3,7 @@
     <at-base-header>
       <at-filter-group :filterDefs="filterDefs" :filter="filter">
         <template #filter:eee><a-switch v-model="filter.eee" /></template>
-        <template #tag:eee="{ label, value }"
-          >{{ label }}：{{ value }}</template
-        >
+        <template #tag:eee="{ label, value }">{{ label }}：{{ value }}</template>
       </at-filter-group>
     </at-base-header>
     <at-base-content>
@@ -16,13 +14,24 @@
           <a-button type="secondary">操作按钮3</a-button>
         </a-space>
       </template>
-      <at-table :pagination="false" :columns="columns" :data="data" />
+      <template #right>
+        <at-toolbar help="https://www.baidu.com" @refresh="refresh"></at-toolbar>
+      </template>
+      <!-- <at-table :pagination="false" :columns="columns" :data="data" /> -->
     </at-base-content>
   </at-base>
 </template>
 <script lang="ts" setup>
 import { reactive } from "vue";
-
+import { AtMessage } from '@/AT'
+const refresh = () => {
+  console.log('handle refresh!')
+}
+AtMessage.success({
+  content: '2aa2',
+  duration: 22222,
+  closable: true
+});
 const columns = [
   {
     title: "Name",
