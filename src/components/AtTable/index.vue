@@ -9,7 +9,10 @@ import { useResizeObserver } from "@vueuse/core";
 const el = ref(null);
 const height = ref(0);
 useResizeObserver(el, () => {
-  height.value = document.body.clientHeight - 314;
+  height.value =
+    document.body.clientHeight -
+    202 -
+    document.getElementsByClassName("at-base-header")[0]?.clientHeight;
 });
 </script>
 <template>

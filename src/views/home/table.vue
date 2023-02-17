@@ -9,8 +9,14 @@
       </at-filter-group>
     </at-base-header>
     <at-base-content>
-      这是一个由配置文件生成的查询条件
-      <!-- <at-table :pagination="false" :columns="columns" :data="data" /> -->
+      <template #left>
+        <a-space>
+          <a-button type="primary">操作按钮</a-button>
+          <a-button type="outline">操作按钮2</a-button>
+          <a-button type="secondary">操作按钮3</a-button>
+        </a-space>
+      </template>
+      <at-table :pagination="false" :columns="columns" :data="data" />
     </at-base-content>
   </at-base>
 </template>

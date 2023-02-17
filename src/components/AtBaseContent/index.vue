@@ -25,7 +25,6 @@ export default {
     box-sizing: border-box;
     min-height: 56px;
     padding: 0 16px;
-    border-bottom: 1px solid #e6e6ed;
   }
   &-body {
     flex: 1;
@@ -42,7 +41,9 @@ export default {
 <template>
   <div class="at-base-content">
     <div class="at-table-content">
-      <div class="at-table-content-header"></div>
+      <div class="at-table-content-header">
+        <slot name="left"></slot>
+      </div>
       <div class="at-table-content-body">
         <slot> </slot>
       </div>

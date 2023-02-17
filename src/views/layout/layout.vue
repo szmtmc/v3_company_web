@@ -3,8 +3,8 @@
     <a-layout-sider hide-trigger collapsible :collapsed="collapsed">
       <div class="logo"></div>
       <a-menu
-        :defaultOpenKeys="'custom'"
-        :defaultSelectedKeys="'custom/query'"
+        :defaultOpenKeys="[defaultOpenKeys]"
+        :defaultSelectedKeys="[defaultSelectedKeys]"
         :style="{ width: '100%' }"
         @menuItemClick="onClickMenuItem"
       >
@@ -61,7 +61,8 @@ const onCollapse = () => {
 };
 const { path } = route;
 console.log(path);
-
+let defaultSelectedKeys = path.substring(1, path.length);
+let defaultOpenKeys = defaultSelectedKeys.split("/")[0];
 const routerList = [
   {
     name: "自定义组件",
@@ -91,7 +92,6 @@ const routerList = [
   },
 ];
 const onClickMenuItem = (key: any) => {
-  console.log(route);
   router.push(`/${key}`);
 };
 </script>

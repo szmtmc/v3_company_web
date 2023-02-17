@@ -1,15 +1,24 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-const Layout = () => import(`../views/home/a.vue`);
 const routes = [
   {
-    path: "/a",
+    path: "",
     name: "home",
-    component: Layout,
+    component: () => import(`../views/layout/layout.vue`),
     children: [
       {
-        path: "",
-        name: "a",
-        component: () => import(`../views/home/index.vue`),
+        path: "custom/layout",
+        name: "layoutComponent",
+        component: () => import(`../views/home/layout.vue`),
+      },
+      {
+        path: "custom/query",
+        name: "queryComponent",
+        component: () => import(`../views/home/query.vue`),
+      },
+      {
+        path: "custom/table",
+        name: "tableComponent",
+        component: () => import(`../views/home/table.vue`),
       },
     ],
   },
